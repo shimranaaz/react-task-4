@@ -1,0 +1,209 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.datetime-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000; 
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  margin: 0;
+ flex-direction: column;
+  position: relative;
+}
+
+.background-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: radial-gradient(circle, rgba(255, 128, 0, 0.2) 1%, transparent 60%);
+  animation: float 10s infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(-20px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.5; }
+}
+
+.datetime-card {
+  z-index: 1;
+  background: linear-gradient(145deg, #282828, #1c1c1c);
+  border: 2px solid #ff8000;
+  border-radius: 20px;
+  padding: 61px;
+  width: 400px;
+  height: 33vh;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  position: relative;
+  animation: fade-in 1.5s ease;
+}
+.datetime-day {
+  width: 151px;
+  height: 81px;
+  background: #ff8000;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 76px);
+  font-size: 16px;
+  font-weight: bold;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  box-shadow: 0px 5px 15px rgba(255, 128, 0, 0.5);
+}
+.datetime-day span {
+  display: block;
+  text-transform: uppercase;
+}
+
+.datetime-date {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #ff8000; 
+}
+
+.datetime-time {
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff; 
+  text-shadow: 0 0 10px rgba(255, 128, 0, 0.8), 0 0 20px rgba(255, 128, 0, 0.6);
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.datetime-heading {
+  font-size: 3.5rem;
+  font-family: "Dancing Script", cursive;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-top: 0rem;
+  margin-bottom: 65px;
+}
+@media (max-width: 768px) {
+  .datetime-container {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .datetime-heading {
+    font-size: 2rem; 
+    margin-bottom: 50px; 
+  }
+
+  .datetime-card {
+    width: 68%;
+    height: 21vh;
+    padding: 62px;
+}
+
+  .datetime-day {
+    width: 120px;
+    height: 60px;
+    font-size: 14px; 
+    top: -40px; 
+    left: calc(50% - 60px); 
+  }
+
+  .datetime-date {
+    font-size: 18px;
+  }
+
+  .datetime-time {
+    font-size: 28px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .datetime-heading {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+
+  .datetime-card {
+    padding: 30px;
+    height: 17vh;
+  }
+
+  .datetime-day {
+    width: 100px; 
+    height: 50px;
+    font-size: 12px; 
+    top: -30px; 
+    left: calc(50% - 50px);
+  }
+
+  .datetime-date {
+    font-size: 16px; 
+  }
+
+  .datetime-time {
+    font-size: 24px; 
+  }
+}
+@media (max-width: 1024px) {
+  .datetime-heading {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+  }
+
+  .datetime-card {
+    padding: 30px;
+    height: 18vh;
+  }
+
+  .datetime-day {
+    width: 100px; 
+    height: 50px;
+    font-size: 12px; 
+    top: -30px; 
+    left: calc(50% - 50px);
+  }
+
+  .datetime-date {
+    font-size: 16px; 
+  }
+
+  .datetime-time {
+    font-size: 24px; 
+  }
+}
+@media (min-width: 1920px) {
+  .datetime-heading {
+    font-size: 2.8rem;
+    margin-bottom: 70px;
+  }
+
+  .datetime-card {
+    padding: 46px;
+    height: 12vh;
+}
+
+  .datetime-day {
+    width: 100px; 
+    height: 50px;
+    font-size: 12px; 
+    top: -30px; 
+    left: calc(50% - 50px);
+  }
+
+  .datetime-date {
+    font-size: 16px; 
+  }
+
+  .datetime-time {
+    font-size: 24px; 
+  }
+}
